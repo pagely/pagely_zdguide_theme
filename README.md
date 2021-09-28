@@ -1,4 +1,8 @@
-# Copenhagen Theme by Zendesk
+# Pagely Zendesk Guide Theme
+
+2021 new branding.
+
+# Fork of Copenhagen theme by Zendesk
 
 The Copenhagen theme is the default Zendesk Guide theme. It is designed to be responsive and accessible.
 Learn more about customizing Zendesk Guide [here](https://support.zendesk.com/hc/en-us/sections/206670747).
