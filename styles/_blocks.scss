@@ -18,23 +18,23 @@
       margin: 0 15px 30px;
     }
 
-    border: 1px solid $brand_color;
-    border-radius: 4px;
-    box-sizing: border-box;
-    color: $brand_color;
+    @extend .card;
+
     display: flex;
     flex: 1 0 340px;
     margin: 0 0 30px;
     max-width: 100%;
-    text-align: center;
+    text-align: left;
+    transition: .2s;
 
     &:hover,
     &:focus,
     &:active {
-      background-color: $brand_color;
+      background-color: $secondary_white;
+      transition: .2s;
 
       * {
-        color: $brand_text_color;
+        color: $primary_dark;
         text-decoration: none;
       }
     }
@@ -55,8 +55,7 @@
   }
 
   &-item-link {
-    color: $brand_color;
-    padding: 20px 30px;
+
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -66,24 +65,30 @@
     &:hover,
     &:active {
       text-decoration: none;
+      color: $primary_white;
     }
-    
+
     &:focus {
-      @include focus-ring;
       text-decoration: none;
     }
   }
 
   &-item-title {
+    color: $primary_white;
     margin-bottom: 0;
-    font-size: 16px;
+    @extend .type_sub_header;
+    margin-bottom: auto;
+
   }
 
   &-item-description {
     margin: 0;
+    margin-top: auto;
+    color: $secondary_grey;
+    @extend .type_body_sub;
   }
 
   &-item-description:not(:empty) {
-    margin-top: 10px;
+    margin-top: 1em;
   }
 }

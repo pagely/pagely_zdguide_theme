@@ -12,6 +12,11 @@
 
   &-title {
     margin-top: 0;
+    position: relative;
+    border-bottom: 1px solid $border-color;
+    display: block;
+    @extend .type_body_sub;
+    margin-bottom: 8px;
   }
 
   &-toggle {
@@ -35,13 +40,13 @@
     &-icon {
       display: none;
     }
-  
+
     &[aria-expanded="false"] {
       .chevron-icon {
         display: inline-block;
       }
     }
-    
+
     &[aria-expanded="true"] {
       .x-icon {
         display: inline-block;
@@ -64,6 +69,32 @@
 
     .collapsible-sidebar-body {
       display: block;
+    }
+  }
+}
+
+.sidenav {
+  &-title {
+
+    position: relative;
+    border-bottom: 1px solid $border-color;
+    display: block;
+    @extend .type_body_sub;
+  }
+
+  &-item {
+    border-radius: 4px;
+    color: $muted-text-color;
+    display: block;
+    margin-bottom: 4px;
+    padding: 10px;
+
+    &.current-article,
+    &:hover,
+    &:focus {
+      background-color: $secondary_dark;
+      color: $brand_text_color;
+      text-decoration: none;
     }
   }
 }

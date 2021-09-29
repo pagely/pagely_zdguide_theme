@@ -12,6 +12,26 @@
   </nav>
 
   <div class="category-container">
+
+    <aside class="category-sidebar" >
+        <div class="collapsible-sidebar">
+          <button type="button" class="collapsible-sidebar-toggle" aria-labelledby="category-articles-title" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" focusable="false" viewBox="0 0 12 12" aria-hidden="true" class="collapsible-sidebar-toggle-icon chevron-icon">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" focusable="false" viewBox="0 0 12 12" aria-hidden="true" class="collapsible-sidebar-toggle-icon x-icon">
+              <path stroke="currentColor" stroke-linecap="round" d="M3 9l6-6m0 6L3 3"/>
+            </svg>
+          </button>
+          <div class="collapsible-sidebar-body">
+            <span class="collapsible-sidebar-title">Main Topics</span>
+
+            <ul>
+            </ul>
+          </div>
+        </div>
+    </aside>
+
     <div class="category-content">
       <header class="page-header">
         <h1>{{category.name}}</h1>
@@ -61,3 +81,27 @@
     </div>
   </div>
 </div>
+
+<script>
+var the_cat_id = {{category.id}};
+ $.getJSON('/api/v2/help_center/en-us/categories.json', function(data){
+   console.log(data.categories);
+   //console.log(catID[0]);
+   var output = "";
+   var active  = "";
+   //console.log(section);
+
+   $.each(data.categories, function(idx, itm){
+     if (the_cat_id === itm.id) {
+       active = "current-article";
+     } else {
+       active = "";
+     }
+     //console.log(the_cat_id, itm.id);
+     output += '<li>';
+     output += '<a class="sidenav-item '+active+'" id="cat'+itm.id+'" href="'+itm.html_url+'">'+itm.name+'</a>';
+     output += '</li>';
+   });
+   $('.collapsible-sidebar-body ul').append(output);
+  });
+</script>

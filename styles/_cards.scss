@@ -1,0 +1,9 @@
+.card {
+  border: 1px solid transparent;
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: $primary_white;
+  background: $secondary_dark;
+  transition: .2s;
+  padding: 2rem;
+}

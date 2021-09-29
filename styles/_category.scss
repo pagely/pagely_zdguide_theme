@@ -12,6 +12,12 @@
 
     flex: 1;
   }
+  &-sidebar {
+    @include desktop {
+      flex: 0 0 18%;
+      margin-right: 2%;
+    }
+  }
 }
 
 .section-tree {
@@ -22,14 +28,17 @@
   justify-content: space-between;
 
   .section {
-    @include tablet { flex: 0 0 45%; /* Two columns for tablet and desktop. Leaving 5% separation between columns */ }
+    @include tablet { flex: 0 0 49%; /* Two columns for tablet and desktop. Leaving 2% separation between columns */ }
     flex: initial;
+    @extend .card;
+    margin-bottom: 20px;
   }
 
   &-title {
     margin-bottom: 0;
-    font-size: 18px;
-    font-weight: $font-weight-semibold;
+    padding-bottom: 1rem;
+    @extend .type_sub_header;
+    border-bottom: 1px solid $border-color;
 
     a { color: $text_color; }
   }
@@ -42,7 +51,6 @@
 
 .article-list {
   &-item {
-    font-size: $font-size-bigger;
     padding: 15px 0;
 
     a { color: $text_color; }
