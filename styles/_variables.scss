@@ -57,6 +57,10 @@ $tablet-width: 768px;
 $desktop-width: 1070px;
 $max-width-container: 1440px;
 
+.text-pink {
+  color: $subheader;
+}
+
 // Fonts
 @font-face {
   font-family: 'Roobert';
