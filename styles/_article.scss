@@ -99,6 +99,17 @@
   &-body {
     @include content-body;
     > p:last-child { margin-bottom: 0; }
+
+    a {
+      color: $text_color;
+      text-decoration: underline;
+      text-decoration-color: $muted-text-color;
+
+      &:hover {
+        color: $primary_white;
+        text-decoration-color: $subheader;
+      }
+    }
   }
 
   &-content {

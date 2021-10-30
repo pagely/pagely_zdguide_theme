@@ -329,3 +329,55 @@
     </article>
   </div>
 </div>
+
+<script>
+    $('iframe').wrap("<div class='resp-container'></div>").addClass("resp-iframe").removeAttr('width').removeAttr('frameborder').removeAttr('height');
+
+    // article jsonld
+    var metatag = $("link[rel=canonical]");
+    var canonical = metatag.attr('href');
+
+    var website_id = "https://support.pagely.com/hc/en-us/schema/#WebSite";
+    var article = {
+      "@context": "https://schema.org",
+      "@graph": {
+        "@type": "Article",
+        "@id": canonical + "/schema/#Article",
+        "url": canonical,
+        "isPartOf": {
+          "@id": canonical + "/schema/#WebPage"
+        },
+        "author": {
+          "@type": "Person",
+          "@id": "https://support.pagely.com/schema/person/{{article.author.name}}/#Person",
+          "name": "{{article.author.name}}",
+          "jobTitle": "",
+          "image": "{{article.author.avatar_url}}",
+          "description": ""
+        },
+        "publisher": {
+          "@id": "https://pagely.com/schema/#Organization"
+        },
+        "articleBody": {{ json_stringify article.body }},
+    "copyrightHolder": {
+      "@id": "https://pagely.com/schema/#Organization"
+    },
+    "discussionUrl": canonical + "/#article-comments",
+      "headline": { { json_stringify article.title } },
+    "datePublished": "{{article.created_at}}",
+      "dateModified": "{{article.edited_at}}",
+        "commentCount": "{{article.comment_count}}",
+          "mainEntityOfPage": canonical + "/schema/#WebPage",
+            "image": "https://pagely.com/wp-content/uploads/2018/02/Pagely-Plg-e1519237068561-400x400.png",
+              "thumbnailUrl": "",
+                "articleSection": "{{section.name}}",
+                  "keywords": ""
+   }
+ };
+
+    var articleJSON = JSON.stringify(article);
+    var el = document.createElement('script');
+    el.type = 'application/ld+json';
+    el.text = articleJSON;
+    document.querySelector('body').appendChild(el);
+  </script>

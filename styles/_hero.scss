@@ -15,4 +15,11 @@
     max-width: 610px;
     margin: 0 auto;
   }
+
+  .search-icon {
+    color: $cta;
+  }
+  svg path {
+    fill: $cta;
+  }
 }

@@ -56,22 +56,26 @@ $header-height: 71px;
       display: inline-block;
     }
 
-    border: 0;
+    @extend .navtype-link;
+
+    /*border: 0;
     color: $link_color;
     display: none;
     font-size: 14px;
     padding: 0 20px 0 0;
     width: auto;
-
+    */
+    margin-right: 20px;
     [dir="rtl"] & { padding: 0 0 0 20px;}
 
-    &:hover,
+    /*&:hover,
     &:focus,
     &:active {
       background-color: transparent;
       color: $link_color;
       text-decoration: underline;
     }
+    */
 
     &.sign-in { display: inline-block; }
   }

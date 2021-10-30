@@ -1,19 +1,59 @@
 /***** Footer *****/
 .footer {
-  border-top: 1px solid $border-color;
-  margin-top: 60px;
-  padding: 30px 0;
+  background: $secondary_dark;
+  margin-top: 80px;
+  padding: 80px 0;
+  color:$secondary-text-color;
 
-  a { color: $secondary-text-color; }
+  .footer_nav {
+    li {
+      margin-bottom: 1rem;
+
+      a { color: $text-color; }
+    }
+  }
+
 
   &-inner {
     @include max-width-container;
     display: flex;
+    flex: wrap;
     justify-content: space-between;
+    margin-bottom: 40px;
   }
 
   &-language-selector button {
     color: $secondary-text-color;
     display: inline-block;
+  }
+
+  .status_card {
+    background: $primary_dark;
+    border-radius: 30px;
+    padding: 16px;
+    font-family: $heading_font;
+    font-size:1.2rem;
+
+    .green-badge {
+      background: $cta;
+      color: $primary_white;
+      padding: 7px 5px;
+      border-radius: 50%;
+      margin-right: .5rem;
+      &:hover {
+        background: $subheader;
+      }
+    }
+
+    a {
+      color: $primary_white;
+      text-decoration: none;
+    }
+
+    &:hover {
+      .green_badge {
+        background: $subheader;
+      }
+    }
   }
 }

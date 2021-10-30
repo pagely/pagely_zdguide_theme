@@ -90,6 +90,7 @@
     padding: 10px;
 
     &.current-article,
+    &.current,
     &:hover,
     &:focus {
       background-color: $secondary_dark;

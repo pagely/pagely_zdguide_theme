@@ -86,7 +86,7 @@
           "type": "checkbox",
           "description": "recent_activity_description",
           "label": "recent_activity_label",
-          "value": true
+          "value": false
         }
       ]
     },
@@ -164,14 +164,14 @@
           "type": "checkbox",
           "description": "follow_post_description",
           "label": "follow_post_label",
-          "value": true
+          "value": false
         },
         {
           "identifier": "show_post_sharing",
           "type": "checkbox",
           "description": "post_sharing_description",
           "label": "post_sharing_label",
-          "value": true
+          "value": false
         }
       ]
     },
@@ -183,7 +183,7 @@
           "type": "checkbox",
           "description": "follow_topic_description",
           "label": "follow_topic_label",
-          "value": true
+          "value": false
         }
       ]
     }

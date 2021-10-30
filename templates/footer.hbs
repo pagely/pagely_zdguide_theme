@@ -1,25 +1,216 @@
 <footer class="footer">
   <div class="footer-inner">
-    {{#link 'help_center'}}{{help_center.name}}{{/link}}
+    <div>
+      <div class="status_card">
+        <a href="https://pagely.com/status/">
+          <span class="green-badge">Go</span>
+          <span>System Status</span>
+        </a>
+      </div>
+    </div>
+      <div class="footer_nav">
+        <ul>
+          <li><a href="https://pagely.com/">Main Site</a></li>
+          <li><a href="https://atomic.pagely.com/">Atomic Login</a></li>
+          <li><a href="https://pagely.com/careers/">Careers</a></li>
+          <li><a href="https://pagely.com/legal/">Legal</a></li>
+        </ul>
+      </div>
 
-    <div class="footer-language-selector">
-      {{#if alternative_locales}}
-        <div class="dropdown language-selector">
-          <button class="dropdown-toggle" aria-haspopup="true">
-            {{current_locale.name}}
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon">
-              <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
-            </svg>
-          </button>
-          <span class="dropdown-menu dropdown-menu-end" role="menu">
-            {{#each alternative_locales}}
-              <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
-                {{name}}
-              </a>
-            {{/each}}
-          </span>
-        </div>
-      {{/if}}
+      <div class="logo">
+        <img src="{{settings.logo}}" alt="{{t 'home_page' name=help_center.name}}" />
+      </div>
+  </div>
+
+  <div class="footer-language-selector">
+    {{#if alternative_locales}}
+      <div class="dropdown language-selector">
+        <button class="dropdown-toggle" aria-haspopup="true">
+          {{current_locale.name}}
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
+          </svg>
+        </button>
+        <span class="dropdown-menu dropdown-menu-end" role="menu">
+          {{#each alternative_locales}}
+            <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
+              {{name}}
+            </a>
+          {{/each}}
+        </span>
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="footer-inner">
+    <div class="copyright" style="width:100%;">
+      Copyright 2009-<script>document.write(new Date().getFullYear())</script>
     </div>
   </div>
 </footer>
+
+
+
+<script type="text/javascript">
+function render_base_jsonld() {
+  // org
+  var org = {
+      "@context":"https://schema.org",
+      "@graph": {
+          "@type":"Organization",
+          "@id":"https://pagely.com/schema/#Organization",
+          "logo": {
+              "@type": "ImageObject",
+              "@id": "https://pagely.com/schema/#Logo",
+              "url": "https://pagely.com/wp-content/uploads/2018/02/Pagely-Plg-e1519237068561-400x400.png",
+              "caption": "Pagely\u00ae"
+          }
+          ,
+          "name":"Pagely\u00ae",
+          "url":"https://pagely.com/",
+          "address":"515 E Grant St, Phoenix, AZ 85004",
+          "duns":"167592109",
+          "legalName":"Pagely, Inc.",
+          "brand": {
+              "@type": "Brand",
+              "slogan": "We help big brands scale WordPress."
+          }
+          ,
+          "owns":[ {
+              "@id": "https://pagely.com/schema/#MainProduct"
+          }
+          ],
+          "sameAs":["https://www.facebook.com/Pagely/",
+          "https://twitter.com/pagely",
+          "https://www.youtube.com/channel/UC4dnevdU6PxjMoRdFJYXVig",
+          "https://www.linkedin.com/company/pagely/",
+          "https://support.pagely.com/",
+          "https://pagelysucks.com/",
+          "https://pagelyreviews.com/",
+          "https://whypagely.com/",
+          "https://northstack.com/",
+          "https://answers.northstack.com/",
+          "https://docs.northstack.com/"]
+      }
+    };
+
+  var orgJSON = JSON.stringify(org);
+
+  var el = document.createElement('script');
+  el.type = 'application/ld+json';
+  el.text = orgJSON;
+  document.querySelector('body').appendChild(el);
+
+  // website
+  var website_id = "https://support.pagely.com/hc/en-us/schema/#WebSite";
+  var website = {
+     "@context":"https://schema.org",
+     "@graph": {
+         "@type":"WebSite",
+         "@id": website_id,
+         "url": "https://support.pagely.com/hc/en-us/",
+         "publisher": {
+             "@id": "https://pagely.com/schema/#Organization"
+         }
+         ,
+         "potentialAction": {
+             "@type":"SearchAction",
+             "target":"https://support.pagely.com/hc/en-us/search?utf8=✓&query={query}",
+             "query-input": "required name=query"
+         }
+     }
+  };
+
+  var websiteJSON = JSON.stringify(website);
+  var el = document.createElement('script');
+  el.type = 'application/ld+json';
+  el.text = websiteJSON;
+  document.querySelector('body').appendChild(el);
+
+  // website
+  var metatag = $("link[rel=canonical]");
+  var canonical = metatag.attr('href');
+  //console.log(canonical);
+
+  var crumbs = $('.breadcrumbs li');
+  var crumbs_obj = [];
+  $( crumbs ).each(function( index) {
+    link = $('a',this).attr("href");
+    title = $(this).attr("title");
+    json = {"@type":"ListItem",
+            "position":index+1,
+            "item":{
+              "@id": "https://support.pagely.com"+link,
+              "name":title
+            }
+          };
+    crumbs_obj.push(json);
+    //console.log( index + ": " + link + ": " + title);
+  });
+
+  //console.log(crumbs_obj);
+  var webpage = {
+    "@context":"https://schema.org",
+    "@graph": {
+      "@type":"WebPage",
+      "@id": canonical+"/schema/#WebPage",
+      "url": canonical,
+      "inLanguage":"en-US",
+      "name":"Managed WordPress Hosting by Pagely\u00ae",
+      "description":"Pagely\u00ae is the original Managed WordPress Hosting provider, delivering flexible, enterprise-grade hosting &amp; support to help your business effectively scale WP.",
+      "isPartOf":{
+        "@id": website_id
+      },
+      "about":{
+        "@id":"https://pagely.com/schema/#Organization"
+      }
+    }
+  };
+
+  if (crumbs_obj.length > 0) {
+    webpage["@graph"]["breadcrumb"] = {"@type":"BreadcrumbList","itemListElement": crumbs_obj};
+   };
+
+  var webpageJSON = JSON.stringify(webpage);
+  //console.log(webpageJSON);
+  var el = document.createElement('script');
+  el.type = 'application/ld+json';
+  el.text = webpageJSON;
+  document.querySelector('body').appendChild(el);
+
+  var product = {
+    "@context":"https://schema.org",
+    "@graph": {
+      "@type":"Product",
+      "@id":"https://pagely.com/schema/#MainProduct",
+      "url":"https://pagely.com/",
+      "name":"Pagely\u00ae Managed WordPress Hosting",
+      "category":"Managed WordPress Hosting and Support",
+      "description":"Scalable Managed WordPress Hosting and Support by Pagely\u00ae",
+      "brand":{
+        "@type":"Brand",
+        "slogan":"We help big brands scale WordPress"
+      },
+      "logo":{
+        "@id":"https://pagely.com/schema/#Logo"
+      },
+      "image":{
+        "@id":"https://pagely.com/schema/#Logo"
+      },
+      "mpn":"Pagely Service",
+      "sku":"Pagely Service",
+      "manufacturer":{
+        "@id":"https://pagely.com/schema/#Organization"
+      }
+    }
+  };
+
+  var productJSON = JSON.stringify(product);
+  var el = document.createElement('script');
+  el.type = 'application/ld+json';
+  el.text = productJSON;
+  document.querySelector('body').appendChild(el);
+  //console.log('rendered json+ld');
+}
+render_base_jsonld();
+</script>

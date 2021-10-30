@@ -32,8 +32,8 @@ $background_color: $primary_dark !default;
 
 $hover-button-color: zass-darken($brand_color, 20%);
 $secondary-text-color: zass-darken($text_color, 30%);
-$visited-link-color: zass-darken($brand_color, 20%);
-$muted-text-color: zass-darken($text_color, 40%);
+$visited-link-color: zass-darken($link_color, 10%);
+$muted-text-color: zass-darken($secondary_grey, 40%);
 
 $primary-shade: zass-darken($background_color, 3%); //#f8f8f8 for the default background_color
 $secondary-shade: zass-darken($background_color, 5%); //#f2f2f2 for the default background_color
@@ -64,7 +64,7 @@ $max-width-container: 1440px;
 // Fonts
 @font-face {
   font-family: 'Roobert';
-  src: url('assets/Roobert.woff2') format('woff2');
+  src: url('assets/fonts/Roobert.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
