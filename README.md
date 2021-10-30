@@ -13,6 +13,18 @@ The Copenhagen theme for Help Center consists of a [set of templates](#templates
 This is the latest version of the Copenhagen theme available for Guide. It is possible to use this repository as a starting point to build your own custom theme. You can fork this repository as you see fit.
 You can use your favorite IDE to develop themes and preview your changes locally in a web browser using the Zendesk Apps Tools (ZAT). For details, see [Previewing theme changes locally](https://support.zendesk.com/hc/en-us/articles/115014810447).
 
+Its a bit hard to figure out at first. But use an API token as the password with a modified login.
+The token is at https://pagely.zendesk.com/agent/admin/api/settings , bottom of list: zendesk_theme_preview  
+
+in the username field it's literally a string, /token added to your email address
+
+```
+% zat theme preview
+Enter your Zendesk subdomain or full URL (including protocol): https://pagely.zendesk.com
+Enter your username: <your email>/token
+Enter your password: <token>
+```
+
 ## Customizing your theme
 Once you have forked this repository you can feel free to edit templates, CSS in `style.css` (if you would like to use SASS go to the [Using SASS section](#using-sass)), javascript and manage assets.
 
@@ -132,7 +144,7 @@ We use [conventional commits](https://conventionalcommits.org/) to improve reada
 - body: (optional) additional contextual information about the change
 - footer: (optional) adds external links, issue references and other meta-information
 
-i.e.: 
+i.e.:
 
 ```
 chore: automate release
