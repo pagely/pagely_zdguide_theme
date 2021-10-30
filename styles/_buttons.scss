@@ -1,5 +1,6 @@
 /***** Buttons *****/
-.button {
+.button,
+.button-large {
   @include tablet { width: auto; }
 
   background-color: transparent;
@@ -22,13 +23,15 @@
   &:hover,
   &:active,
   &:focus,
-  &.button-primary {
+  &.button-primary,
+  &.walkthrough-choice {
     background-color: $brand_color;
     color: $brand_text_color;
     text-decoration: none;
   }
 
-  &.button-primary {
+  &.button-primary,
+  &.walkthrough-choice {
     &:hover,
     &:focus,
     &:active {

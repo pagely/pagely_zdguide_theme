@@ -116,6 +116,11 @@
     line-height: 1.6;
     margin: 40px 0;
     word-wrap: break-word;
+
+    img {
+      border: 1rem solid $secondary_dark;
+      margin: 0 0 1rem 0;
+    }
   }
 
   &-footer {
