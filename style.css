@@ -1166,6 +1166,27 @@ a.navtype-link:hover::before, .nav-wrapper a:hover::before, .breadcrumbs li a:ho
   position: relative;
 }
 
+.search-results-text, zd-autocomplete zd-autocomplete-multibrand[aria-selected="true"], zd-autocomplete zd-autocomplete-multibrand, zd-autocomplete zd-autocomplete-title-multibrand, zd-autocomplete zd-autocomplete-option, zd-autocomplete zd-autocomplete-breadcrumbs-multibrand, zd-autocomplete zd-autocomplete-header {
+  color: #CAD3D3;
+}
+
+.search-results-text:hover, zd-autocomplete zd-autocomplete-multibrand:hover, zd-autocomplete zd-autocomplete-title-multibrand:hover, zd-autocomplete zd-autocomplete-option:hover, zd-autocomplete zd-autocomplete-breadcrumbs-multibrand:hover, zd-autocomplete zd-autocomplete-header:hover, .search-results-text:active, zd-autocomplete zd-autocomplete-multibrand:active, zd-autocomplete zd-autocomplete-title-multibrand:active, zd-autocomplete zd-autocomplete-option:active, zd-autocomplete zd-autocomplete-breadcrumbs-multibrand:active, zd-autocomplete zd-autocomplete-header:active, .search-results-text:focus, zd-autocomplete zd-autocomplete-multibrand:focus, zd-autocomplete zd-autocomplete-title-multibrand:focus, zd-autocomplete zd-autocomplete-option:focus, zd-autocomplete zd-autocomplete-breadcrumbs-multibrand:focus, zd-autocomplete zd-autocomplete-header:focus {
+  text-decoration: underline;
+  text-decoration-color: #EA0FC1 !important;
+}
+
+zd-autocomplete {
+  background-color: #1D1C23;
+}
+
+zd-autocomplete zd-autocomplete-multibrand[aria-selected="true"] {
+  background-color: #0E0D0F;
+}
+
+zd-autocomplete zd-autocomplete-option, zd-autocomplete zd-autocomplete-breadcrumbs-multibrand, zd-autocomplete zd-autocomplete-header {
+  color: #BDBDBD;
+}
+
 /***** Hero component *****/
 .hero {
   height: 300px;
