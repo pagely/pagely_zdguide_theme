@@ -9,19 +9,19 @@
 
   > button {
     border: 0;
-    color: $link_color;
+    color: $brand_color;
     min-width: 0;
     padding: 0;
     white-space: nowrap;
 
     &:hover,
     &:focus {
-      color: $link_color;
+      color: $brand_color;
       background-color: transparent;
     }
 
     &::after {
-      color: $link_color;
+      color: $brand_color;
       padding-right: 15px;
 
       [dir="rtl"] & {

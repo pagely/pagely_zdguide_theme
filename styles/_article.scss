@@ -47,6 +47,9 @@
   &-author {
     a {
       color: $primary_grey;
+      &:hover {
+        text-decoration-color: $subheader;
+      }
     }
   }
 
@@ -89,7 +92,7 @@
     }
 
     @include desktop {
-      flex-basis: 75%; /* Take entire row */
+      flex-basis: 100%; /* Take entire row */
     }
 
     margin-bottom: 60px;
@@ -103,10 +106,9 @@
     a {
       color: $text_color;
       text-decoration: underline;
-      text-decoration-color: $muted-text-color;
+      text-decoration-color: $text_secondary;
 
       &:hover {
-        color: $primary_white;
         text-decoration-color: $subheader;
       }
     }
@@ -236,5 +238,10 @@
 
   li {
     margin-bottom: 15px;
+    
+    a {
+      @extend .navtype-link;
+      color: $secondary-text-color;
+    }
   }
 }

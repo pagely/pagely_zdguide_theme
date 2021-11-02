@@ -84,7 +84,7 @@
 
   &-item {
     border-radius: 4px;
-    color: $muted-text-color;
+    color: $text_secondary;
     display: block;
     margin-bottom: 4px;
     padding: 10px;
@@ -95,7 +95,7 @@
     &:focus {
       background-color: $secondary_dark;
       color: $brand_text_color;
-      text-decoration: none;
+      text-decoration-color: $brand_color;
     }
   }
 }
