@@ -48,3 +48,32 @@
 .search-container {
   position: relative;
 }
+
+.search-results-text {
+  color: $text_color;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: underline;
+    text-decoration-color: $brand_color !important;
+  }
+}
+
+zd-autocomplete {
+  background-color: $secondary_dark;
+
+  zd-autocomplete-multibrand[aria-selected="true"] {
+    @extend .search-results-text;
+    background-color: $primary_dark;
+  }
+
+  zd-autocomplete-multibrand, zd-autocomplete-title-multibrand {
+    @extend .search-results-text;
+  }
+
+  zd-autocomplete-option, zd-autocomplete-breadcrumbs-multibrand, zd-autocomplete-header{
+    @extend .search-results-text;
+    color: $text_secondary;
+  }
+}
