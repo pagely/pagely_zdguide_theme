@@ -66,9 +66,11 @@
                 {{/each}}
               </ul>
               {{#if more_articles}}
-                <a href="{{url}}" class="see-all-articles">
-                  {{t 'show_all_articles' count=article_count}}
-                </a>
+                <div class="justify-right">
+                  <a href="{{url}}" class="see-all-articles">
+                    {{t 'show_all_articles' count=article_count}}
+                  </a>
+                </div>
               {{/if}}
             {{/if}}
           </section>

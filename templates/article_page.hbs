@@ -74,9 +74,9 @@
 
           <ul class="meta-group">
             {{#is article.created_at article.edited_at}}
-              <li class="text-pink">{{date article.created_at timeago=true}}</li>
+              <li class="pub-date">{{date article.created_at timeago=true}}</li>
             {{else}}
-              <li class="text-pink" style="margin-left:auto;">{{date article.edited_at timeago=true}}</li>
+              <li class="pub-date" style="margin-left:auto;">{{date article.edited_at timeago=true}}</li>
             {{/is}}
           </ul>
         </div>

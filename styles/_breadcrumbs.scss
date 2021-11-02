@@ -22,6 +22,7 @@
 
     a {
       @extend .navtype-link;
+      color: $secondary-text-color;
     }
   }
 }

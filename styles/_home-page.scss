@@ -13,6 +13,10 @@
   text-align: center;
 }
 
+.home-section.community {
+  margin-bottom: 10px;
+}
+
 /***** Promoted articles *****/
 
 .promoted-articles {
@@ -38,22 +42,21 @@
     }
 
     a {
-      display: block;
-      border-bottom: 1px solid $border-color;
-      padding: 15px 0;
-      color: $text_color;
+      @extend .navtype-link;
+      color: $secondary-text-color;
+      margin: 15px 0;
+      display: inline-block;
     }
+
+    // a {
+    //   display: block;
+    //   border-bottom: 1px solid $border-color;
+    //   padding: 15px 0;
+    //   color: $text_color;
+    // }
 
     .icon-lock {
       vertical-align: baseline;
-    }
-
-    &:last-child a {
-      @include desktop {
-        border-bottom: 1px solid $border-color;
-      }
-
-      border: 0;
     }
   }
 
