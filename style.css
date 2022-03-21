@@ -203,7 +203,7 @@ template {
 }
 
 .type_body_main, h4 {
-  font-size: 18px;
+  font-size: 22px;
   line-height: 30px;
   letter-spacing: -0.8px;
 }
@@ -223,7 +223,7 @@ body {
   background-color: #0E0D0F;
   color: #CAD3D3;
   font-family: "Roobert", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 22px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -245,6 +245,12 @@ h1 {
 
 h2, h3 {
   font-family: "Roobert", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+}
+
+h2 {
+  color: #EA0FC1;
+  font-size: 32px;
+  line-height: 40px;
 }
 
 h4 {
@@ -1276,7 +1282,7 @@ zd-autocomplete zd-autocomplete-option, zd-autocomplete zd-autocomplete-breadcru
 }
 
 .sub-nav input[type="search"]::after {
-  font-size: 16px;
+  font-size: 22px;
 }
 
 /***** Blocks *****/
@@ -3339,6 +3345,7 @@ zd-autocomplete zd-autocomplete-option, zd-autocomplete zd-autocomplete-breadcru
   display: block;
   margin-bottom: 4px;
   padding: 10px;
+  font-size: 16px;
 }
 
 .sidenav-item.current-article, .sidenav-item.current, .sidenav-item:hover, .split-button button.sidenav-item:hover, .sidenav-item:focus {
@@ -3744,7 +3751,7 @@ zd-autocomplete zd-autocomplete-option, zd-autocomplete zd-autocomplete-breadcru
 }
 
 .request-sidebar h2 {
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 600;
   position: relative;
 }
@@ -4265,7 +4272,7 @@ zd-autocomplete zd-autocomplete-option, zd-autocomplete zd-autocomplete-breadcru
 }
 
 .profile-badges-item-title, .profile-badges-item-metadata-title {
-  font-size: 16px;
+  font-size: 22px;
   margin-bottom: 10px;
 }
 
