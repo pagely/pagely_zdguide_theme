@@ -1784,6 +1784,7 @@ zd-autocomplete zd-autocomplete-option, zd-autocomplete zd-autocomplete-breadcru
 
 .article-list-item {
   padding: 15px 0;
+  font-size: medium;
 }
 
 @media (min-width: 1070px) {
